@@ -3,102 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manvitha | CSE Student</title>
+
+    <title>Manvitha | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
 
         body {
-            background-color: #f4f7fb;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
             color: #333;
-            line-height: 1.6;
         }
 
-        header {
-            background: #1e3a8a;
+        /* Navigation */
+        nav {
+            background-color: #222;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav h1 {
             color: white;
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 26px;
+            margin-bottom: 10px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin: 0 15px;
         }
 
         nav a:hover {
-            color: #93c5fd;
+            color: #00adb5;
         }
 
-        .hero {
+        /* Home */
+        #home {
             min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
+            background-color: #e8f9fa;
+            padding: 30px;
         }
 
-        .hero h2 {
+        #home h2 {
             font-size: 45px;
-            color: #1e3a8a;
-            margin-bottom: 10px;
+            color: #00adb5;
+            margin-bottom: 15px;
         }
 
-        .hero p {
+        #home p {
             font-size: 20px;
-            max-width: 650px;
+            max-width: 700px;
         }
 
-        .btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: #1e3a8a;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-        .btn:hover {
-            background: #2563eb;
-        }
-
+        /* Common Section */
         section {
             padding: 60px 10%;
         }
 
         section h2 {
             text-align: center;
-            color: #1e3a8a;
-            margin-bottom: 30px;
-            font-size: 30px;
+            margin-bottom: 25px;
+            color: #00adb5;
         }
 
-        .about {
-            background: white;
+        /* About */
+        #about {
+            background-color: white;
             text-align: center;
         }
 
-        .about p {
+        #about p {
             max-width: 750px;
             margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
         }
 
-        .skills-container {
+        /* Skills */
+        .skills {
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -106,45 +97,51 @@
         }
 
         .skill {
-            background: white;
-            padding: 20px 35px;
+            background-color: white;
+            padding: 20px 40px;
             border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px #ccc;
             font-weight: bold;
         }
 
-        .education {
-            background: white;
+        /* Education */
+        #education {
+            background-color: white;
             text-align: center;
         }
 
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
+        #education p {
             margin: 10px;
+            font-size: 18px;
         }
 
+        /* Contact */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        /* Footer */
         footer {
-            background: #1e3a8a;
+            background-color: #222;
             color: white;
             text-align: center;
             padding: 20px;
         }
 
+        /* Mobile */
         @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
+            #home h2 {
+                font-size: 32px;
             }
 
             nav a {
-                margin: 0 8px;
-            }
-
-            .hero h2 {
-                font-size: 35px;
+                display: inline-block;
+                margin: 5px;
             }
         }
     </style>
@@ -152,79 +149,118 @@
 
 <body>
 
-    <!-- Header -->
-    <header>
+    <!-- Navigation -->
+    <nav>
         <h1>Manvitha</h1>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <!-- Home -->
-    <section class="hero" id="home">
+
+    <!-- Home Section -->
+    <section id="home">
+
         <h2>Hello, I'm Manvitha 👋</h2>
 
         <p>
-            I am a Computer Science and Engineering student
-            currently pursuing my 2nd year at Jain Institution of Technology.
+            I am a 2nd year Computer Science and Engineering student
+            at Jain Institution of Technology.
         </p>
 
-        <a href="#about" class="btn">Know More</a>
     </section>
 
-    <!-- About -->
-    <section class="about" id="about">
+
+    <!-- About Section -->
+    <section id="about">
+
         <h2>About Me</h2>
 
         <p>
             I am currently pursuing my 2nd year of Computer Science and
             Engineering at Jain Institution of Technology. I am interested
-            in programming and technology. I am familiar with Git and have
-            basic programming knowledge in C and Python. I am continuously
-            learning new concepts and working on improving my technical skills.
+            in programming and learning new technologies. I am familiar with
+            Git and have programming knowledge in C and Python. I am
+            continuously improving my technical and problem-solving skills.
         </p>
+
     </section>
 
-    <!-- Skills -->
+
+    <!-- Skills Section -->
     <section id="skills">
+
         <h2>My Skills</h2>
 
-        <div class="skills-container">
-            <div class="skill">C Programming</div>
-            <div class="skill">Python</div>
-            <div class="skill">Git</div>
-            <div class="skill">Problem Solving</div>
+        <div class="skills">
+
+            <div class="skill">
+                C Programming
+            </div>
+
+            <div class="skill">
+                Python
+            </div>
+
+            <div class="skill">
+                Git
+            </div>
+
+            <div class="skill">
+                Problem Solving
+            </div>
+
         </div>
+
     </section>
 
-    <!-- Education -->
-    <section class="education" id="education">
+
+    <!-- Education Section -->
+    <section id="education">
+
         <h2>Education</h2>
 
         <h3>Jain Institution of Technology</h3>
+
         <p>
-            Bachelor of Engineering (B.E.) - Computer Science and Engineering
+            Bachelor of Engineering (B.E.)
         </p>
-        <p>Currently pursuing 2nd Year</p>
+
+        <p>
+            Computer Science and Engineering
+        </p>
+
+        <p>
+            Currently pursuing 2nd Year
+        </p>
+
     </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
+
+    <!-- Contact Section -->
+    <section id="contact">
+
         <h2>Contact Me</h2>
 
         <p>📧 Email: your-email@example.com</p>
+
         <p>💻 GitHub: github.com/yourusername</p>
+
         <p>🔗 LinkedIn: linkedin.com/in/yourusername</p>
+
     </section>
+
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Manvitha. All Rights Reserved.</p>
+
+        <p>
+            © 2026 Manvitha | Personal Portfolio
+        </p>
+
     </footer>
 
 </body>

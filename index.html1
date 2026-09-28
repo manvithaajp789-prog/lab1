@@ -1,0 +1,591 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manvitha | CSE Student Portfolio</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Poppins", Arial, sans-serif;
+        color: #ffffff;
+        background: linear-gradient(
+            135deg,
+            #071952,
+            #088395,
+            #35a29f,
+            #0b2447
+        );
+        min-height: 100vh;
+    }
+
+    /* Rain Animation */
+    .rain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .rain span {
+        position: absolute;
+        top: -100px;
+        width: 2px;
+        height: 80px;
+        background: linear-gradient(
+            transparent,
+            rgba(255, 255, 255, 0.8)
+        );
+        animation: rain 1s linear infinite;
+    }
+
+    .rain span:nth-child(1) {
+        left: 5%;
+        animation-delay: 0.2s;
+    }
+
+    .rain span:nth-child(2) {
+        left: 12%;
+        animation-delay: 0.7s;
+    }
+
+    .rain span:nth-child(3) {
+        left: 20%;
+        animation-delay: 0.4s;
+    }
+
+    .rain span:nth-child(4) {
+        left: 28%;
+        animation-delay: 1s;
+    }
+
+    .rain span:nth-child(5) {
+        left: 36%;
+        animation-delay: 0.3s;
+    }
+
+    .rain span:nth-child(6) {
+        left: 44%;
+        animation-delay: 0.8s;
+    }
+
+    .rain span:nth-child(7) {
+        left: 52%;
+        animation-delay: 0.5s;
+    }
+
+    .rain span:nth-child(8) {
+        left: 60%;
+        animation-delay: 1.2s;
+    }
+
+    .rain span:nth-child(9) {
+        left: 68%;
+        animation-delay: 0.6s;
+    }
+
+    .rain span:nth-child(10) {
+        left: 76%;
+        animation-delay: 0.9s;
+    }
+
+    .rain span:nth-child(11) {
+        left: 84%;
+        animation-delay: 0.1s;
+    }
+
+    .rain span:nth-child(12) {
+        left: 92%;
+        animation-delay: 0.7s;
+    }
+
+    @keyframes rain {
+        from {
+            transform: translateY(-100px);
+        }
+
+        to {
+            transform: translateY(110vh);
+        }
+    }
+
+    /* Navigation */
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 8%;
+        background: rgba(3, 15, 55, 0.85);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    nav h1 {
+        font-size: 28px;
+        color: #ffffff;
+    }
+
+    nav h1 span {
+        color: #ffdd00;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #ffdd00;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .rainbow {
+        width: 280px;
+        height: 140px;
+        border-radius: 280px 280px 0 0;
+        border-top: 10px solid #ff0000;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        box-shadow:
+            0 -10px 0 #ff8c00,
+            0 -20px 0 #ffff00,
+            0 -30px 0 #00ff00,
+            0 -40px 0 #00bfff,
+            0 -50px 0 #8a2be2;
+        margin-bottom: 45px;
+        opacity: 0.9;
+    }
+
+    .hero h2 {
+        font-size: clamp(40px, 7vw, 75px);
+        margin-bottom: 15px;
+        text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h2 span {
+        background: linear-gradient(
+            90deg,
+            #ff4b4b,
+            #ffae00,
+            #fff000,
+            #20e66b,
+            #00d9ff,
+            #9d4edd
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+
+    .hero p {
+        font-size: 20px;
+        max-width: 700px;
+        line-height: 1.8;
+        color: #e9faff;
+    }
+
+    .hero-button {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 14px 30px;
+        border-radius: 30px;
+        background: linear-gradient(
+            90deg,
+            #ff4b4b,
+            #ffae00,
+            #20e66b,
+            #00c6ff,
+            #9d4edd
+        );
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+    }
+
+    .hero-button:hover {
+        transform: translateY(-5px) scale(1.05);
+    }
+
+    /* Sections */
+    section {
+        padding: 90px 10%;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 38px;
+        margin-bottom: 45px;
+    }
+
+    .section-title span {
+        color: #ffdd00;
+    }
+
+    /* About */
+    .about-card {
+        max-width: 850px;
+        margin: auto;
+        padding: 40px;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .about-card p {
+        font-size: 18px;
+        line-height: 2;
+        color: #efffff;
+    }
+
+    /* Skills */
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px;
+    }
+
+    .skill-card {
+        padding: 35px 20px;
+        text-align: center;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .skill-icon {
+        font-size: 45px;
+        margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+        font-size: 21px;
+    }
+
+    /* Education */
+    .education-card {
+        max-width: 750px;
+        margin: auto;
+        padding: 40px;
+        text-align: center;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .education-card h3 {
+        font-size: 28px;
+        color: #ffdd00;
+        margin-bottom: 15px;
+    }
+
+    .education-card p {
+        font-size: 18px;
+        margin: 8px;
+    }
+
+    /* Contact */
+    .contact-box {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .contact-card {
+        min-width: 220px;
+        padding: 25px;
+        text-align: center;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-card .icon {
+        font-size: 35px;
+    }
+
+    .contact-card p {
+        margin-top: 10px;
+        word-break: break-word;
+    }
+
+    /* Footer */
+    footer {
+        padding: 25px;
+        text-align: center;
+        background: rgba(2, 10, 35, 0.9);
+    }
+
+    footer p {
+        color: #dceeff;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+        nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav ul {
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .rainbow {
+            width: 180px;
+            height: 90px;
+        }
+
+        section {
+            padding: 65px 7%;
+        }
+
+        .about-card,
+        .education-card {
+            padding: 25px;
+        }
+    }
+</style>
+
+</head> <body>
+<!-- Rain -->
+<div class="rain">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+<!-- Navigation -->
+<nav>
+    <h1>Manvitha<span> .</span></h1>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+
+    <div class="rainbow"></div>
+
+    <h2>Hello, I'm <span>Manvitha</span> 🌈</h2>
+
+    <p>
+        A passionate Computer Science and Engineering student
+        who enjoys learning programming, exploring technology,
+        and building new things.
+    </p>
+
+    <a href="#about" class="hero-button">
+        Explore My Journey ↓
+    </a>
+
+</section>
+
+
+<!-- About Section -->
+<section id="about">
+
+    <h2 class="section-title">
+        About <span>Me</span> 🌧️
+    </h2>
+
+    <div class="about-card">
+
+        <p>
+            Hi! I am <strong>Manvitha</strong>, currently pursuing my
+            2nd year of Computer Science and Engineering at
+            <strong>Jain Institution of Technology</strong>.
+        </p>
+
+        <br>
+
+        <p>
+            I am interested in programming and technology. I am
+            familiar with Git and have knowledge of programming
+            languages such as C, Python, and Java. I enjoy learning
+            new concepts and continuously improving my technical
+            and problem-solving skills.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills">
+
+    <h2 class="section-title">
+        My <span>Skills</span> 💻
+    </h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <div class="skill-icon">🔵</div>
+            <h3>C Programming</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🐍</div>
+            <h3>Python</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">☕</div>
+            <h3>Java</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🔧</div>
+            <h3>Git</h3>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🧩</div>
+            <h3>Problem Solving</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Education Section -->
+<section id="education">
+
+    <h2 class="section-title">
+        My <span>Education</span> 🎓
+    </h2>
+
+    <div class="education-card">
+
+        <h3>Jain Institution of Technology</h3>
+
+        <p>
+            Bachelor of Engineering
+        </p>
+
+        <p>
+            Computer Science and Engineering
+        </p>
+
+        <p>
+            Currently pursuing 2nd Year
+        </p>
+
+        <p>
+            📚 Learning • Growing • Creating
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact">
+
+    <h2 class="section-title">
+        Let's <span>Connect</span> 🌈
+    </h2>
+
+    <div class="contact-box">
+
+        <div class="contact-card">
+            <div class="icon">📧</div>
+            <p>your-email@example.com</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="icon">💻</div>
+            <p>github.com/yourusername</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="icon">🔗</div>
+            <p>linkedin.com/in/yourusername</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <p>
+        🌧️ After every rain comes a rainbow 🌈
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Manvitha | CSE Student
+    </p>
+
+</footer>
+
+</body> </html>
